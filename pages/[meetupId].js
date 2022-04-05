@@ -41,7 +41,7 @@ export async function getStaticPaths() {
   mongoClient.close();
 
   return {
-    fallback: false,
+    fallback: "blocking",
     paths: meetups.map((value) => ({
       params: { meetupId: value._id.toString() },
     })),
